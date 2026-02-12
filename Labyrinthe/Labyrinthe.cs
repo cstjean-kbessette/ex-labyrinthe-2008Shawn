@@ -25,7 +25,39 @@
             { '█','█','█','█',' ','█','█','█',' ','█','█','█','█','█',' ','█','█','█',' ','█' },
             { '█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█' }
         };
+        public int posX { get; private set; }
+        public int posY { get; private set; }
+        public Labyrinthe()
+        {
 
+        }
+        public void MoveUp()
+        {
+            if (Map[posY, posX] != '█')
+                posY--;
+        }
+        public void MoveDown()
+        {
+            if (Map[posY, posX] != '█')
+                posY++;
+        }
+        public void MoveRight()
+        {
+            if (Map[posY, posX] != '█')
+                posX++;
+        }
+        public void MoveLeft()
+        {
+            if (Map[posY, posX] != '█')
+                posX--;
+        }
+        public bool IsExit()
+        {
+            if (Map[posX, posY] == 'E')
+                return true;
+            else 
+                return false;
+        }
 
     }
 }
