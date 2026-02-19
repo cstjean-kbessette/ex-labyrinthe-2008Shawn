@@ -11,10 +11,8 @@
         }
         public void Run()
         {
-            while (true)
+            while (!labyrinthe.IsExit())
             {
-                if (labyrinthe.IsExit())
-                    view.AfficherVictoire();
                 view.AfficherEntete();
                 view.AfficherLabyrinthe(labyrinthe);
                 Console.WriteLine("Haut, bas, gauche ou droite (W-S-A-D)");
@@ -33,16 +31,23 @@
                         Console.WriteLine("Entrer 'W' 'S' 'A' ou 'D')");
                     }
                 }
-                if (choix == 'W')
-                    labyrinthe.MoveUp();
-                else if (choix == 'A')
-                    labyrinthe.MoveLeft();
-                else if (choix == 'S')
-                    labyrinthe.MoveDown();
-                else
-                    labyrinthe.MoveRight();
+                switch (choix)
+                {
+                    case 'W':
+                        labyrinthe.MoveUp();
+                        break;
+                    case 'A':
+                        labyrinthe.MoveLeft();
+                        break;
+                    case 'S':
+                        labyrinthe.MoveDown();
+                        break;
+                    default:
+                        labyrinthe.MoveRight();
+                        break;
+                }
             }
-            
+            view.AfficherVictoire();
         }
     }
 }

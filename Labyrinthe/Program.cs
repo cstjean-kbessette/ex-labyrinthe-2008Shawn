@@ -4,9 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Labyrinthe model = new Labyrinthe();
-            View view = new View();
-            Controller controller = new Controller(model, view); 
+            Labyrinthe labyrinthe = new Labyrinthe();
+            View vue = new View();
+            Controller controller = new Controller(labyrinthe, vue); 
             controller.Run();
         }
     }
