@@ -25,35 +25,31 @@
             { '█','█','█','█',' ','█','█','█',' ','█','█','█','█','█',' ','█','█','█',' ','█' },
             { '█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█','█' }
         };
-        public int posX { get; private set; }
-        public int posY { get; private set; }
-        public Labyrinthe()
-        {
-
-        }
+        public int posX { get; private set; } = 1;
+        public int posY { get; private set; } = 1;
         public void MoveUp()
         {
-            if (Map[posY, posX] != '█')
+            if (Map[posY - 1, posX] != '█')
                 posY--;
         }
         public void MoveDown()
         {
-            if (Map[posY, posX] != '█')
+            if (Map[posY + 1, posX] != '█')
                 posY++;
         }
         public void MoveRight()
         {
-            if (Map[posY, posX] != '█')
+            if (Map[posY, posX + 1] != '█')
                 posX++;
         }
         public void MoveLeft()
         {
-            if (Map[posY, posX] != '█')
+            if (Map[posY, posX - 1 ] != '█')
                 posX--;
         }
         public bool IsExit()
         {
-            if (Map[posX, posY] == 'E')
+            if (Map[posY, posX] == 'E')
                 return true;
             else 
                 return false;

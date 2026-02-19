@@ -7,9 +7,9 @@ namespace Labyrinthe
         public void AfficherLabyrinthe(Labyrinthe labyrinthe)
         {
             char[,] row = labyrinthe.Map;
-            for (int i=0; i<20; i++)
+            for (int i=0; i < labyrinthe.Map.GetLength(0); i++)
             {
-                for (int j = 0; j < 20; j++)
+                for (int j = 0; j < labyrinthe.Map.GetLength(1); j++)
                 { 
                     if (labyrinthe.posX == j && labyrinthe.posY  == i)
                         Console.Write('P');
